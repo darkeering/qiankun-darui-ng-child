@@ -1,1 +1,11 @@
-ng-child works
+<div style="display: flex">
+  <d-accordion
+    [data]="menu"
+    class="menu"
+    (itemClick)="itemClick($event)"
+  ></d-accordion>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -47,7 +47,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "src/styles.css",
+              "node_modules/angular-demo-darkeering/style.css",
+              "node_modules/ng-devui/devui.min.css"
+            ],
             "scripts": [],
             "customWebpackConfig": {
               "path": "./custom-webpack.config.js"
