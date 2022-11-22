@@ -1893,10 +1893,10 @@ ajv@^8.0.0, ajv@^8.8.0:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-angular-demo-darkeering@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/angular-demo-darkeering/-/angular-demo-darkeering-0.0.2.tgz#ba82bf14bc1857ead4306ae66449f90e909d2340"
-  integrity sha512-IM2T9kBxi/PPWP8DGPcyLlQkVQUmy1sVRWs6Y7vWqNlx9mWRlRaXfEQGNk48h0lz+X65cGlYqI6B7BHW1NN2rA==
+angular-demo-darkeering@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/angular-demo-darkeering/-/angular-demo-darkeering-0.0.8.tgz#2c61488e673707349cac081de7f4ba9d378c8aad"
+  integrity sha512-Ps731hA6QKR9QIoq1zkiFHATm74ABybAzyogXZOk4W3rtEKpYXCPIzZ/ZDH9XzaplRQn9rM41aIhMuh1+V+RvQ==
   dependencies:
     "@angular/cdk" "^13.0.0"
     tslib "^2.3.0"
