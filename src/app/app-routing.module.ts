@@ -18,7 +18,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { IconsComponent } from './icons/icons.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
   { path: 'button', component: ButtonComponent },
   { path: 'autoComplete', component: AutoCompleteComponent },
   { path: 'carousel', component: CarouselComponent },
@@ -33,7 +32,9 @@ const routes: Routes = [
   // { path: 'tagsInput', component: TagsInputComponent },
   { path: 'tooltip', component: TooltipComponent },
   { path: 'icons', component: IconsComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'tagsInput', component: TagsInputComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

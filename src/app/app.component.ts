@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'ng-child';
-  menu = [
-    { title: 'Home', key: 'home' },
+  menu: any = [
+    { title: 'Home', key: '' },
     { title: 'Button', key: 'button' },
     { title: 'Auto Complete', key: 'autoComplete' },
     { title: 'Carousel', key: 'carousel' },
@@ -23,14 +23,29 @@ export class AppComponent {
     { title: 'Tags', key: 'tags' },
     // { title: 'Tags Input', key: 'tagsInput' },
     { title: 'Tooltip', key: 'tooltip' },
+    { title: 'Tags Input', key: 'tagsInput' },
     { title: 'Icons', key: 'icons' },
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.route.url.subscribe(() => {
+      console.log(111);
+      console.log('location.pathname', location.pathname);
+      const ac = location.pathname.split('/')[2]
+      console.log(ac);
+      if(ac) {
+        this.menu.forEach((i: any) => {
+          i['active'] = i.key === ac
+        })
+      } else {
+        this.menu[0]['active'] = true
+      }
+    })
+
+  }
 
 
   itemClick(event: any) {
-    console.log('item click', event);
     this.router.navigate([event.item.key])
   }
 }
