@@ -23,6 +23,7 @@ export class AppComponent {
     { title: 'Tags', key: 'tags' },
     // { title: 'Tags Input', key: 'tagsInput' },
     { title: 'Tooltip', key: 'tooltip' },
+    { title: 'Icons', key: 'icons' },
   ];
 
   constructor(private router: Router) { }

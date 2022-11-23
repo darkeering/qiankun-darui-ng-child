@@ -15,6 +15,7 @@ import { SearchComponent } from './search/search.component';
 import { TagsComponent } from './tags/tags.component';
 import { TagsInputComponent } from './tags-input/tags-input.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
+import { IconsComponent } from './icons/icons.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'tags', component: TagsComponent },
   // { path: 'tagsInput', component: TagsInputComponent },
   { path: 'tooltip', component: TooltipComponent },
+  { path: 'icons', component: IconsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

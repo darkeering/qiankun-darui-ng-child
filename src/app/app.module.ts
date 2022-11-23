@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonModule, AutoCompleteModule, TextInputModule, CarouselModule, CheckBoxModule, DragDropModule, DrawerModule, DropDownModule, FullScreenModule, PanelModule, SearchModule, TagsModule, TooltipModule } from 'angular-demo-darkeering';
+import { ButtonModule, AutoCompleteModule, TextInputModule, CarouselModule, CheckBoxModule, DragDropModule, DrawerModule, DropDownModule, FullScreenModule, PanelModule, SearchModule, TagsModule, TooltipModule, IconsModule } from 'angular-demo-darkeering';
 import { AccordionModule, DevUIModule } from 'ng-devui';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,7 @@ import { TagsComponent } from './tags/tags.component';
 import { TagsInputComponent } from './tags-input/tags-input.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { FormsModule } from '@angular/forms';
+import { IconsComponent } from './icons/icons.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     TagsComponent,
     TagsInputComponent,
-    TooltipComponent
+    TooltipComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ import { FormsModule } from '@angular/forms';
     PanelModule,
     SearchModule,
     TagsModule,
-    TooltipModule
+    TooltipModule,
+    IconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
