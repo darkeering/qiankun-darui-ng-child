@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagsInputComponent implements OnInit {
 
+  source = [
+    'c++',
+    'jave',
+    'javascript'
+  ]
   constructor() { }
 
   ngOnInit(): void {

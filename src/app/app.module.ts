@@ -1,7 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonModule, AutoCompleteModule, TextInputModule, CarouselModule, CheckBoxModule, DragDropModule, DrawerModule, DropDownModule, FullScreenModule, PanelModule, SearchModule, TagsModule, TooltipModule, IconsModule } from 'angular-demo-darkeering';
+import {
+  TagsInputModule,
+  ButtonModule,
+  AutoCompleteModule,
+  TextInputModule,
+  CarouselModule,
+  CheckBoxModule,
+  DragDropModule,
+  DrawerModule,
+  DropDownModule,
+  FullScreenModule,
+  PanelModule,
+  SearchModule,
+  TagsModule,
+  TooltipModule,
+  IconsModule
+} from 'angular-demo-darkeering';
 import { AccordionModule, DevUIModule } from 'ng-devui';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -62,7 +78,8 @@ import { IconsComponent } from './icons/icons.component';
     SearchModule,
     TagsModule,
     TooltipModule,
-    IconsModule
+    IconsModule,
+    TagsInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
