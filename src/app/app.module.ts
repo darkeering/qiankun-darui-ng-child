@@ -16,9 +16,11 @@ import {
   SearchModule,
   TagsModule,
   TooltipModule,
-  IconsModule
-} from 'angular-demo-darkeering';
-import { AccordionModule, DevUIModule } from 'ng-devui';
+  IconsModule,
+  AccordionModule,
+  TableModule
+} from 'ng-darui';
+import { DevUIModule } from 'ng-devui';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +40,8 @@ import { TagsInputComponent } from './tags-input/tags-input.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { FormsModule } from '@angular/forms';
 import { IconsComponent } from './icons/icons.component';
+import { AccordionComponent } from './accordion/accordion.component';
+import { TabelComponent } from './tabel/tabel.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +60,9 @@ import { IconsComponent } from './icons/icons.component';
     TagsComponent,
     TagsInputComponent,
     TooltipComponent,
-    IconsComponent
+    IconsComponent,
+    AccordionComponent,
+    TabelComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +85,8 @@ import { IconsComponent } from './icons/icons.component';
     TagsModule,
     TooltipModule,
     IconsModule,
-    TagsInputModule
+    TagsInputModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

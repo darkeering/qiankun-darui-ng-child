@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FullScreenComponent implements OnInit {
 
+  isFull1 = false
+  isFull2 = false
   constructor() { }
-
   ngOnInit(): void {
   }
 
+  toggleFullScreen1(status: boolean) {
+    this.isFull1 = status
+    console.log('toggleFullScreen1', status);
+    
+  }
+  toggleFullScreen2(status: boolean) {
+    this.isFull2 = status
+    console.log('toggleFullScreen2', status);
+  }
 }

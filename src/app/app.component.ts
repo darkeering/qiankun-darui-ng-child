@@ -11,6 +11,7 @@ export class AppComponent {
   menu: any = [
     { title: 'Home', key: '' },
     { title: 'Button', key: 'button' },
+    { title: 'Accordion', key: 'accordion' },
     { title: 'Auto Complete', key: 'autoComplete' },
     { title: 'Carousel', key: 'carousel' },
     { title: 'Checkbox', key: 'checkbox' },
@@ -21,9 +22,9 @@ export class AppComponent {
     { title: 'Panel', key: 'panel' },
     { title: 'Search', key: 'search' },
     { title: 'Tags', key: 'tags' },
-    // { title: 'Tags Input', key: 'tagsInput' },
     { title: 'Tooltip', key: 'tooltip' },
     { title: 'Tags Input', key: 'tagsInput' },
+    { title: 'Tabel', key: 'tabel' },
     { title: 'Icons', key: 'icons' },
   ];
 
@@ -31,9 +32,9 @@ export class AppComponent {
     this.route.url.subscribe(() => {
       console.log(111);
       console.log('location.pathname', location.pathname);
-      const ac = location.pathname.split('/')[2]
+      const ac = location.pathname.split('/')[1]
       console.log(ac);
-      if(ac) {
+      if (ac) {
         this.menu.forEach((i: any) => {
           i['active'] = i.key === ac
         })
@@ -46,6 +47,6 @@ export class AppComponent {
 
 
   itemClick(event: any) {
-    this.router.navigate([event.item.key])
+    this.router.navigate([event.key])
   }
 }

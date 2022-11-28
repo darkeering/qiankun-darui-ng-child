@@ -16,9 +16,12 @@ import { TagsComponent } from './tags/tags.component';
 import { TagsInputComponent } from './tags-input/tags-input.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { IconsComponent } from './icons/icons.component';
+import { AccordionComponent } from './accordion/accordion.component';
+import { TabelComponent } from './tabel/tabel.component';
 
 const routes: Routes = [
   { path: 'button', component: ButtonComponent },
+  { path: 'accordion', component: AccordionComponent },
   { path: 'autoComplete', component: AutoCompleteComponent },
   { path: 'carousel', component: CarouselComponent },
   { path: 'checkbox', component: CheckboxComponent },
@@ -29,10 +32,10 @@ const routes: Routes = [
   { path: 'panel', component: PanelComponent },
   { path: 'search', component: SearchComponent },
   { path: 'tags', component: TagsComponent },
-  // { path: 'tagsInput', component: TagsInputComponent },
   { path: 'tooltip', component: TooltipComponent },
   { path: 'icons', component: IconsComponent },
   { path: 'tagsInput', component: TagsInputComponent },
+  { path: 'tabel', component: TabelComponent },
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: '**', redirectTo: '' },
 ];

@@ -49,7 +49,8 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.css",
-              "node_modules/angular-demo-darkeering/style.css",
+              "node_modules/ng-darui/style-sheet.css",
+              "node_modules/ng-darui/style.css",
               "node_modules/ng-devui/devui.min.css"
             ],
             "scripts": [],
