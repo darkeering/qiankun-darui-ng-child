@@ -1,27 +1,94 @@
-# NgChild
+# 生成项目
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+```typescript
+ng new <app-name> --skip-tests
+```
 
-## Development server
+# qiankun 配置
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. 添加打包工具
+   ```typescript
+   yarn add @angular-builders/custom-webpack
+   ```
+2. 配置 `angular.json`
+   ```typescript
+   architect > build
+   "builder": "@angular-builders/custom-webpack:browser"
+   "customWebpackConfig": {
+     "path": "./custom-webpack.config.js"
+   }
+   architect > serve
+   "builder": "@angular-builders/custom-webpack:dev-server"
+   ```
+3. 根目录添加 `custom-webpack.config.js`
+   ```typescript
+   const appName = require("./package.json").name;
+   module.exports = {
+     devServer: {
+       headers: {
+         "Access-Control-Allow-Origin": "*",
+       },
+     },
+     output: {
+       library: `${appName}-[name]`,
+       libraryTarget: "umd",
+     },
+   };
+   ```
+4. src 下添加 `public-path.js`
+   ```typescript
+   if (window.__POWERED_BY_QIANKUN__) {
+     // eslint-disable-next-line no-undef
+     __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
+   }
+   ```
+5. 修改 `polyfills.ts`
 
-## Code scaffolding
+   ```typescript
+   // import 'zone.js';  // Included with Angular CLI.
+   ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+6. 修改 `main.ts`
 
-## Build
+   ```typescript
+   import "./public-path";
+   import { enableProdMode, NgModuleRef } from "@angular/core";
+   import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   import { AppModule } from "./app/app.module";
+   import { environment } from "./environments/environment";
 
-## Running unit tests
+   if (environment.production) {
+     enableProdMode();
+   }
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   let app: void | NgModuleRef<AppModule>;
+   async function render() {
+     app = await platformBrowserDynamic()
+       .bootstrapModule(AppModule)
+       .catch((err) => console.error(err));
+   }
+   if (!(window as any).__POWERED_BY_QIANKUN__) {
+     render();
+   }
 
-## Running end-to-end tests
+   export async function bootstrap(props: Object) {
+     console.log(props);
+   }
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   export async function mount(props: Object) {
+     render();
+   }
 
-## Further help
+   export async function unmount(props: Object) {
+     console.log(props);
+     // @ts-ignore
+     app.destroy();
+   }
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# 组件库 ng-darui
+
+# 参考链接
+
+> [华为组件库](https://devui.design/)
